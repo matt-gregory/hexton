@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="row" th:fragment="productTemplate">
+    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+        <img th:src="${product.getSmallImgUrl()}"
+                src="http://images.ctfassets.net/hhxub1fsypz0/6la5P99h1mWqC8KgGsMSYC/41ed187c0dd3f990993e3462da525145/9781784841027.jpg?w=200&amp;h=200&amp;q=100"
+             alt="GCSE (9-1) in Religious Studies Revision Guide Edexcel B 1RB0" class="img-thumbnail img-responsive"/>
+    </div>
+    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+        <div class="container-fluid nopadding">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col xs 12">
+                    <h4 class="listing-header">
+                        <a href="gcse-9-1-in-religious-studies-revision-guide-edexcel-b-1rb0/trade-paperback-uk" class="list-group-item-heading"
+                           th:text="${product.getDescriptiveDetail().getTitleDetail().getTitleElement().getTitle()}">
+                            GCSE (9-1) in Religious Studies Revision Guide Edexcel B 1RB0
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid nopadding">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col xs 12">
+                    <p class="listing listing-author">by <a href="/../authors/brian-poxon"
+                        th:text="${product.getDescriptiveDetail().getContributors().get(0).getName()}">Brian Poxon</a>
+                    </p>
+                    <p class="listing">Paperback&nbsp;- Other formats available:&nbsp;<a href="gcse-9-1-in-religious-studies-revision-guide-edexcel-b-1rb0/library-binding">Library binding (Hardback)</a>
+                    </p>
+                    <p class="listing active-price">£ 9.89</p>
+                    <p class="listing">SAVE 10%</p>
+                    <p class="listing stock-status">In stock
+                    </p>
+                    <div id="9781784841027" class="shopify-buy-frame shopify-buy-frame--product shopify-buy__layout-vertical" style="max-width: 280px;">
+                        <iframe horizontalscrolling="no" verticalscrolling="no" allowtransparency="true" frameborder="0" scrolling="no" name="frame-product-8725528193" style="width: 100%; overflow: hidden; border: none; height: 18px;"></iframe></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -48,8 +48,8 @@ public class ProductService {
     public void readProducts() throws IOException {
         log.debug("Reading products");
         File file = new File(fileLocation);
-        if (!file.exists()){
-            log.error("Couldn't read product file from {}",file.getAbsolutePath());
+        if (!file.exists()) {
+            log.error("Couldn't read product file from {}", file.getAbsolutePath());
             return;
         }
         long timestamp = file.lastModified();
@@ -61,14 +61,12 @@ public class ProductService {
             Products products = xmlMapper.readValue(fileInputStream, Products.class);
             this.products = products;
             this.timestamp = timestamp;
-        }finally {
-            if (this.products == null){
+        } finally {
+            if (this.products == null) {
                 log.warn("products is null");
-            }else if (this.products.getProducts() == null){
-                log.warn("products list is null");
-            }else if (this.products.getProducts().isEmpty()){
+            } else if (this.products.getProducts().isEmpty()) {
                 log.warn("products list is empty");
-            }else{
+            } else {
                 log.info("read {} products", this.products.getProducts().size());
             }
         }

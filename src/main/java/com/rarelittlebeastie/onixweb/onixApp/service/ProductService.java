@@ -62,7 +62,15 @@ public class ProductService {
             this.products = products;
             this.timestamp = timestamp;
         }finally {
-            log.info("products is {}", this.products);
+            if (this.products == null){
+                log.warn("products is null");
+            }else if (this.products.getProducts() == null){
+                log.warn("products list is null");
+            }else if (this.products.getProducts().isEmpty()){
+                log.warn("products list is empty");
+            }else{
+                log.info("read {} products", this.products.getProducts().size());
+            }
         }
     }
 }

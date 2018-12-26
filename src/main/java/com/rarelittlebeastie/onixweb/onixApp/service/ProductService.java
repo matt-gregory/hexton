@@ -48,6 +48,10 @@ public class ProductService {
     public void readProducts() throws IOException {
         log.debug("Reading products");
         File file = new File(fileLocation);
+        if (!file.exists()){
+            log.error("Couldn't read product file from {}",file.getAbsolutePath());
+            return;
+        }
         long timestamp = file.lastModified();
         if (this.timestamp == timestamp) {
             log.debug("File hasn't changed");
